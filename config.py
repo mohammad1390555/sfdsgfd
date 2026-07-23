@@ -1,0 +1,20 @@
+APP_NAME = "Black Bear"
+APP_COMMAND = "blackbear"
+APP_VERSION = "1.0.0"
+LINUX_ONLY = True
+
+REFRESH_INTERVAL_SECONDS = 60
+TICK_SECONDS = 1
+SCREEN_REFRESH_PER_SECOND = 4
+LOG_LINES = 20
+MIN_OPS_PER_TICK = 4
+MAX_OPS_PER_TICK = 18
+DEFAULT_LOG_TO_FILE = False
+LOG_DIR = "logs"
+LOG_FILE_NAME = "blackbear.log"
+
+BORDER_COLOR = "bright_cyan"
+ACCENT_COLOR = "bright_green"
+WARNING_COLOR = "bright_yellow"
+ERROR_COLOR = "bright_red"
+INFO_COLOR = "bright_blue"

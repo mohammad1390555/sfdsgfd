@@ -1,3 +1,4 @@
+# ─── Made by Mohammad — github.com/mohammad1390555 ───
 APP_NAME = "Black Bear"
 APP_COMMAND = "blackbear"
 APP_VERSION = "1.0.0"

@@ -608,7 +608,7 @@ def show_snapshot(settings: AppSettings) -> None:
     table.add_row("File logging", "ON" if settings.file_logging_enabled else "OFF")
     table.add_row("Mode", "Synthetic demo only")
     CONSOLE.# print(table)
-    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("\nPress Enter to return to the menu...")
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("\nPress Enter to return to the menu...")
 
 
 def create_state(choice: str, settings: AppSettings) -> SimulationState:
@@ -631,7 +631,7 @@ def interactive_loop(args: argparse.Namespace) -> int:
 
     while True:
         print_menu(settings)
-        choice = # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("Select option: ").strip()
+        choice = # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("Select option: ").strip()
 
         if choice in SCENARIOS:
             state = create_state(choice, settings)
@@ -639,14 +639,14 @@ def interactive_loop(args: argparse.Namespace) -> int:
                 run_plain_mode(state, duration=args.duration)
             else:
                 run_rich_mode(state, duration=args.duration)
-            # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("\nPress Enter to return to the menu...")
+            # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("\nPress Enter to return to the menu...")
         elif choice == "4":
             show_snapshot(settings)
         elif choice == "5":
             settings.file_logging_enabled = not settings.file_logging_enabled
             status = "enabled" if settings.file_logging_enabled else "disabled"
             # # print(f...",),\nFile logging {status}. Log path: {LOG_PATH}")
-            # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("Press Enter to return to the menu...")
+            # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("Press Enter to return to the menu...")
         elif choice == "6":
             # print("Goodbye.")
             return 0

@@ -210,7 +210,7 @@ class SimulationState:
 
 def ensure_linux() -> None:
     if LINUX_ONLY and not sys.platform.startswith("linux"):
-        print(f"{APP_NAME} is Linux-only.")
+        # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # print(f...",),{APP_NAME} is Linux-only.")
         sys.exit(1)
 
 
@@ -240,7 +240,7 @@ def add_log(state: SimulationState, level: str, message: str, echo: bool = False
     if state.settings.file_logging_enabled:
         write_log_file(line)
     if echo:
-        print(line)
+        # print(line)
 
 
 def weighted_status() -> str:
@@ -544,7 +544,7 @@ def run_plain_mode(state: SimulationState, duration: Optional[int] = None) -> No
                 state.running = False
     except KeyboardInterrupt:
         state.running = False
-        print("\n[!] Stop requested. Closing session...")
+        # print("\n[!] Stop requested. Closing session...")
 
     add_log(state, "FINAL", final_summary(state), echo=True)
 
@@ -565,15 +565,15 @@ def run_rich_mode(state: SimulationState, duration: Optional[int] = None) -> Non
                     state.running = False
     except KeyboardInterrupt:
         state.running = False
-        CONSOLE.print("\n[bold yellow]Stop requested. Closing session...[/bold yellow]")
+        CONSOLE.# print("\n[bold yellow]Stop requested. Closing session...[/bold yellow]")
 
     add_log(state, "FINAL", final_summary(state))
-    CONSOLE.print(render_layout(state))
+    CONSOLE.# print(render_layout(state))
 
 
 def print_menu(settings: AppSettings) -> None:
     clear_screen()
-    CONSOLE.print(build_header())
+    CONSOLE.# print(build_header())
 
     menu = Table(title="Main Menu", border_style=BORDER_COLOR, show_lines=True)
     menu.add_column("ID", style="bold")
@@ -585,13 +585,13 @@ def print_menu(settings: AppSettings) -> None:
     menu.add_row("4", "System Snapshot", "Show current host, Python, runtime, and launcher details.")
     menu.add_row("5", "Toggle File Logging", f"Current state: {'ON' if settings.file_logging_enabled else 'OFF'}")
     menu.add_row("6", "Exit", "Close Black Bear.")
-    CONSOLE.print(menu)
-    CONSOLE.print(build_footer_panel())
+    CONSOLE.# print(menu)
+    CONSOLE.# print(build_footer_panel())
 
 
 def show_snapshot(settings: AppSettings) -> None:
     clear_screen()
-    CONSOLE.print(build_header())
+    CONSOLE.# print(build_header())
 
     table = Table(title="Snapshot", border_style=BORDER_COLOR, show_lines=True)
     table.add_column("Key", style="bold")
@@ -607,8 +607,8 @@ def show_snapshot(settings: AppSettings) -> None:
     table.add_row("Log path", str(LOG_PATH))
     table.add_row("File logging", "ON" if settings.file_logging_enabled else "OFF")
     table.add_row("Mode", "Synthetic demo only")
-    CONSOLE.print(table)
-    input("\nPress Enter to return to the menu...")
+    CONSOLE.# print(table)
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("\nPress Enter to return to the menu...")
 
 
 def create_state(choice: str, settings: AppSettings) -> SimulationState:
@@ -631,7 +631,7 @@ def interactive_loop(args: argparse.Namespace) -> int:
 
     while True:
         print_menu(settings)
-        choice = input("Select option: ").strip()
+        choice = # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("Select option: ").strip()
 
         if choice in SCENARIOS:
             state = create_state(choice, settings)
@@ -639,19 +639,19 @@ def interactive_loop(args: argparse.Namespace) -> int:
                 run_plain_mode(state, duration=args.duration)
             else:
                 run_rich_mode(state, duration=args.duration)
-            input("\nPress Enter to return to the menu...")
+            # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("\nPress Enter to return to the menu...")
         elif choice == "4":
             show_snapshot(settings)
         elif choice == "5":
             settings.file_logging_enabled = not settings.file_logging_enabled
             status = "enabled" if settings.file_logging_enabled else "disabled"
-            print(f"\nFile logging {status}. Log path: {LOG_PATH}")
-            input("Press Enter to return to the menu...")
+            # # print(f...",),\nFile logging {status}. Log path: {LOG_PATH}")
+            # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # input("Press Enter to return to the menu...")
         elif choice == "6":
-            print("Goodbye.")
+            # print("Goodbye.")
             return 0
         else:
-            print("Invalid option. Try again.")
+            # print("Invalid option. Try again.")
             time.sleep(1)
 
 
@@ -671,7 +671,7 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.version:
-        print(f"{APP_NAME} {APP_VERSION}")
+        # # print(f...",),{APP_NAME} {APP_VERSION}")
         return 0
 
     if args.scenario:
